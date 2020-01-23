@@ -1,0 +1,285 @@
+html {
+    font-family: 'Roboto','Lucida Grande', sans-serif;
+    color: white;
+    background-color: #380036;
+}
+
+.navbar {
+    font-family: 'Roboto','Lucida Grande', sans-serif !important;
+
+}
+
+body{
+    background-color: #380036;
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+    color: white;
+    padding-bottom:2%;
+    padding-top:2%;
+    background-color: #380036;;
+}
+
+small {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding-top: 5%;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    padding-top: 3%;
+
+
+}
+
+.home_content h2 {
+    color: white;
+    text-align: center;
+
+}
+
+.dropdown-item a {
+    background: 343a40;
+
+}
+
+.dropdown-item {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+p {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: auto;
+    padding-top: 50px;
+}
+
+
+
+
+.special {
+    padding: 2%;
+    padding-top: 16%;
+    font-size: 300%;
+
+}
+
+.even_special {
+
+    padding-top: 30%;
+    font-size: 300%;
+}
+
+.no_padding {
+    padding-top:0;
+}
+
+td {
+     vertical-align : middle;
+     text-align:center;
+     margin-right:auto;
+     margin-left:auto;
+}
+
+footer {
+    background-color: #380036;
+}
+
+footer p {
+    color:white;
+    text-align: right;
+    padding-top:5%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.numbering {
+
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.results {
+
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.track_results {
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding-bottom: 5%;
+    padding-top: 0%;
+
+}
+
+table {
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.dropdown-menu.show {
+
+    background-color: #343a40;
+}
+
+
+
+.numbering {
+
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+.trends_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+}
+
+.home_content {
+    background-color:#343a40;
+    margin-top: 10%;
+    margin-bottom:10%;
+
+}
+
+#home_link_tabs a {
+    width:75%;
+    border-style:solid;
+    height:100px;
+    display:table-cell;
+    vertical-align:middle;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+    color: black !important;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.nav-link.dropdown-toggle:hover{
+    color: black !important;
+}
+
+.time_logo {
+
+    padding: 2%;
+    width: 25%;
+    padding-bottom: 3%;
+
+}
+
+.no_padding p {
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding-top: 0;
+}
+
+.type_logo {
+
+    padding-top: 3%;
+    width: 40%;
+
+}
+
+body {
+    background-color: #380036 !important;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+.audio_preview {
+
+    margin-top: 2%;
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 50%;
+}
+
+audio {
+    max-width: 400px !important;
+    display: block !important;
+    max-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+
+}
+
+figure {
+    padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+html {
+    font-family: 'Roboto','Lucida Grande', sans-serif;
+    color: white;
+    background-color: #380036;
+}
+
+body{
+    background-color: #380036;;
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+    color: white;
+    padding-bottom:2%;
+    padding-top:2%;
+}
+
+small {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding-top: 5%;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    padding-top: 3%;
+}
+
+.home_content h2 {
+    color: white;
+    padding-top: 10%;
+    text-align: center;
+
+}
+
+.dropdown-item a {
+    background: white;
+
+}
+
+.dropdown-item {
+    background-color: white;
+    text-align: center;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+p {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: auto;
+}
+
+table{
+    table-layout: fixed
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.special {
+    padding: 2%
+}
+
+td{
+     vertical-align : middle;
+     text-align:center;
+     margin-right:auto;
+     margin-left:auto;
+}
+
+
+
+footer p {
+    color:white;
+    text-align: right;
+    padding-top:5%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.numbering{
+    float:right;
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.results{
+
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.track_results{
+    float:left;
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+

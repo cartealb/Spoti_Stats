@@ -1,0 +1,218 @@
+html {
+    font-family: 'Roboto','Lucida Grande', sans-serif;
+    color: white;
+    background-color: #380036;
+}
+
+.navbar {
+    font-family: 'Roboto','Lucida Grande', sans-serif !important;
+
+}
+
+body{
+    background-color: #380036;;
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+    color: white;
+    padding-bottom:2%;
+    padding-top:2%;
+}
+
+small {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding-top: 5%;
+}
+
+h3{
+    margin-left: 50%;
+    margin-top: 50%;
+    margin-bottom:50%;
+}
+h4 {
+    text-align: center;
+    color: white;
+    padding-top: 3%;
+    padding-bottom:1%;
+}
+
+.home_content h2 {
+    color: white;
+    text-align: center;
+
+
+}
+
+.dropdown-item a {
+    background: 343a40;
+
+}
+
+.dropdown-item {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+p {
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.no_padding p {
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding-top: 0;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 10%;
+}
+
+
+
+footer p {
+    color:white;
+    text-align: right;
+    padding-top:5%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+#logout_home {
+    background: grey;
+    color: black;
+    text-align: center;
+}
+
+.row>.column {
+    padding: 0 8px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+
+
+#gallery {
+    padding-top: 5%;
+}
+
+#home_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30%;
+    max-height: 30%;
+    padding-bottom: 10px;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding-bottom: 5%;
+
+}
+
+table{
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.dropdown-menu.show {
+
+    background-color: #343a40;
+}
+
+.numbering{
+
+    vertical-align : middle;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+
+.trends_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+}
+.home_content {
+    background-color:#343a40;
+    margin-top: 10%;
+    margin-bottom:10%;
+
+}
+#home_link_tabs a {
+    width:75%;
+    border-style:solid;
+    height:100px;
+    display:table-cell;
+    vertical-align:middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+    color: black !important;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+
+    color: white !important;
+
+}
+
+.nav-link.dropdown-toggle:hover{
+    color: black !important;
+}
+
+#login_welcome {
+
+    padding-top: 0%;
+}
+
+#login_logo{
+
+    padding-top: 4%;
+}
+
+

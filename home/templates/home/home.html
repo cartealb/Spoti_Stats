@@ -1,0 +1,133 @@
+ {% extends "base_bootstrap.html" %} {% block navbar %}
+
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Spoti Stats Homepage</title>
+
+        {% load static %}
+        <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    </head>
+
+<main>
+
+<body>
+    <br>
+    <br>
+    <h1>Welcome to</h1>
+
+
+    {% load static %}
+
+        <img src="{% static 'images/spoti_stats_logo_hor.png' %}" id="logo" alt="Spoti Stats Logo">
+
+
+        <h2>Check Out Your Listening Habits</h2>
+
+        <img class= "trends_logo"src="{% static 'images/artist_trends.png' %}" alt="Artist Trends Logo">
+
+
+        <table>
+            <tr>
+                <td class="numbering">
+    <div id="home_link_tabs">
+        <a class="dropdown-item"  href="spotify/long_term_artists" title="View Top Long Term Streamed Artists">View Top Long Term Streamed Artists</a>
+</div>
+</td>
+
+
+        <td class="numbering">
+        <div id="home_link_tabs">
+        <a class="dropdown-item" href="spotify/medium_term_artists" title="View Medium Term Streamed Artists">View Medium Term Streamed Artists</a>
+        </div>
+        </td>
+
+        <td class="numbering">
+        <div id="home_link_tabs">
+        <a class="dropdown-item" href="spotify/short_term_artists" title="View Short Term Streamed Artists">View Short Term Streamed Artists</a>
+        </div>
+        </td>
+        </tr>
+
+        </table>
+
+        <br>
+
+        <img class= "trends_logo" src="{% static 'images/track_trends.png' %}" alt="Track Trends Logo">
+
+        <table>
+            <tr>
+
+            <td class="numbering">
+        <div id="home_link_tabs">
+        <a class="dropdown-item" href="spotify/long_term_tracks" title="View Long Term Streamed Tracks">View Long Term Streamed Tracks</a>
+        </div>
+        </td>
+
+        <td class="numbering">
+        <div id="home_link_tabs">
+        <a class="dropdown-item" href="spotify/medium_term_tracks" title="View Medium Term Streamed Tracks">View Medium Term Streamed Tracks</a>
+        </div>
+        </td>
+
+        <td class="numbering">
+        <div id="home_link_tabs">
+        <a class="dropdown-item" href="spotify/short_term_tracks" title="View Short Term Streamed Tracks">View Short Term Streamed Tracks</a>
+        </div>
+        </td>
+
+
+        </table>
+
+
+
+
+
+   <div class="home_content">
+        <h2>What is Spoti Stats?</h1>
+            <p> No more having to wait to the end of the year for your Spotify Unwrapped.<br> This web app is a fun way to check your own listening trends on your own terms.<br> It's built using the Spotify API to scrape user listening data.</p>
+            <p class="no_padding">Currently, Spoti Stats is able to grab your top tracks and top artists within three different time intervals (short term, medium term, and long term listening history).</p>
+
+            {% load static %}
+
+        <div id="gallery">
+            <div class="row">
+                <div class="column">
+                    <img src="{% static 'images/track.jpg' %}" alt="Track Stats Screenshot">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/artist.jpg' %}" alt="Artist Stats Screenshot">
+                </div>
+
+            </div>
+
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</main>
+
+<footer>
+
+            <p>AJ Carter &copy; 2020</p>
+            </footer>
+
+
+</html>
+
+{% endblock %}

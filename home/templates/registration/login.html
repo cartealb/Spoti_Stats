@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block content %}
+<head>
+
+<meta charset="UTF-8">
+
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+
+
+
+<meta name="wa4e-version" value="2019-10:161EB">
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{% load static %}
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Login Page</title>
+
+
+
+ </head>
+
+<body>
+
+
+
+{% load static %}
+<h1 style="background-color:#343a40; color: white;"></h1>
+<h1 style=" color: white;">Welcome to</h1>
+        <img id="login_logo" src="{% static 'images/spoti_stats_logo_hor.png' %}"  alt="Spoti Stats Logo">
+
+
+
+
+<h2 id="login_welcome">Please login with your Spotify account</h2>
+<div id="home_link_tabs" style="padding-top:4%">
+
+<div id="home_link_tabs" align="center">
+        <a style="width: 25%;"  class="dropdown-item" href="{% url "social:begin" "spotify" %}" title: 'Login with your Spotify account'>Login with Spotify</a>
+        </div>
+        </div>
+
+
+ <div class="home_content">
+        <h2>What is Spoti Stats?</h1>
+            <p> No more having to wait to the end of the year for your Spotify Unwrapped.<br> This web app is a fun way to check your own listening trends on your own terms.<br> It's built using the Spotify API to scrape user listening data.</p>
+            <p class="no_padding" >Currently, Spoti Stats is able to grab your top tracks and top artists within three different time intervals (short term, medium term, and long term listening history).</p>
+
+            {% load static %}
+
+        <div id="gallery">
+            <div class="row">
+                <div class="column">
+                    <img src="{% static 'images/track.jpg' %}" alt="Track Stats Screenshot">
+                </div>
+                <div class="column">
+                    <img src="{% static 'images/artist.jpg' %}" alt="Artist Stats Screenshot">
+                </div>
+
+            </div>
+
+            </div>
+    </div>
+
+
+ </body>
+
+<footer>
+
+            <p>AJ Carter &copy; 2020</p>
+            </footer>
+</html>
+
+
+
+
+
+
+{% endblock %}
+
+
+</body>

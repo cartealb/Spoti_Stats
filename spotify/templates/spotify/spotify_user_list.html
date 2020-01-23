@@ -1,0 +1,174 @@
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+    <meta charset="UTF-8">
+    <title>Your Music Stats</title>
+
+
+    <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+
+  {% load static %}
+  <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/html5reset.css' %}">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+
+
+<meta name="wa4e-version" value="2019-10:161EB">
+
+
+
+<script type="text/javascript">
+audiojs.events.ready(function() {
+var ajso = audiojs.createAll();
+var playPauseElems = [];
+var audioJSes = document.getElementsByClassName("audiojs");
+for(var i = 0;i < audioJSes.length;i++) {
+    playPauseElems.push( audioJSes[i].getElementsByClassName('play-pause') );
+}
+for(var i = 0;i < playPauseElems.length;i++) {
+    playPauseElems[i][0].addEventListener("click", function(event){ clickedPlayPause( event, ajso ); }, false );
+}
+});
+function clickedPlayPause(event, ajso) {
+    var currAudioJSwrapperID = event.target.parentNode.parentNode.id;
+    var thisIndex = parseInt( currAudioJSwrapperID.substr(currAudioJSwrapperID.indexOf("audiojs_wrapper") + 15) );
+
+    for(var i = 0;i < ajso.length;i++) {
+        if ( i != thisIndex && ajso[i].playing ) ajso[i].pause();
+    }
+
+}
+</script>
+
+
+
+
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        {% load static %}
+  <a style ="width:30%" class="navbar-brand" href="/"><img src="{% static 'images/spoti_stats_logo_hor.png' %}" id="logo" alt="Spoti Stats Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top Artists
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <table>
+            <tr>
+            <td class="numbering">
+                <div id="home_link_tabs">
+          <a class="dropdown-item" href="long_term_artists">Long Term Artists</a>
+          <a class="dropdown-item" href="medium_term_artists">Medium Term Artists</a>
+          <!--<div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="short_term_artists">Short Term Artists</a>
+
+        </div>
+        </td>
+        </tr>
+        </table>
+
+      </li>
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top Tracks
+        </a>
+
+        <table>
+            <tr>
+            <td class="numbering">
+                <div id="home_link_tabs">
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <a class="dropdown-item" href="long_term_tracks">Long Term Tracks</a>
+
+
+
+          <a class="dropdown-item" href="medium_term_tracks">Medium Term Tracks</a>
+
+
+
+          <a class="dropdown-item" href="short_term_tracks">Short Term Tracks</a>
+
+
+
+          </div>
+          </td>
+        </tr>
+        </table>
+
+
+      </li>
+
+
+        <li class="nav-item active" >
+                <a class="nav-link" href="{% url 'logout' %}?next={% url 'spotify:all' %}">Logout <span class="sr-only">(current)</span></a>
+        </li>
+
+
+
+    </ul>
+
+
+  </div>
+
+
+
+
+
+</nav>
+
+    </head>
+    <body>
+
+            <img src="{% static 'images/your_top_tracks_logo2.png' %}" class="type_logo" alt="Your Top Tracks"><img src="{% static 'images/long_term_logo.png' %}" class="time_logo" alt="Long term">
+
+    <table class="table table-striped table-dark" style="table-layout: fixed"><tr><td class="numbering"> <div><h3 class="even_special">1</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dc9bd2dd3bfe455d3b0f12f2f08351a7d42b6531" alt=""><h4>Out Of The Woods</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/05f34e72e5fa443630037edfb02319f999e124a7?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">2</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/cefa154b3f01758fac6744465dbfd9d799c8a031" alt=""><h4>Roar</h4><h4 class="no_padding">Katy Perry</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/00bdf6b1ecc337c4e9e9f42e196a4dd2d74e97df?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">3</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2730d1d6e9325275f104f8e33f3" alt=""><h4>Partition</h4><h4 class="no_padding">Beyoncé</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/8ecd5010e5a46f1c84f42bcfed50505395825d7a?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">4</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/7282038812a4baf6644a542e18159ee4a9a0296a" alt=""><h4>Teenage Dream</h4><h4 class="no_padding">Katy Perry</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/855b8d7f3eacdebc5e47e608d7c39e87d645c29f?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">5</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dc9bd2dd3bfe455d3b0f12f2f08351a7d42b6531" alt=""><h4>You Are In Love</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/ccccec4205b7b742c171a3de08f4869a4246ca3f?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">6</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/e470d74231fe64a22ed99445ba029fd3741746c4" alt=""><h4>Glamorous</h4><h4 class="no_padding">Fergie, Ludacris, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/675f340144c849fe10de0ebb37d29a69972ca135?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">7</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2732460cd012dffc1916ec21283" alt=""><h4>Ego</h4><h4 class="no_padding">Tove Styrke</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/6ef280592ddee99b3a45ac533972fb00b16fcab4?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">8</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dbdc50239dfbc4603739150520dc04d241357adc" alt=""><h4>Confident</h4><h4 class="no_padding">Demi Lovato</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/577c2f2a86401650f67cdc8f97d92c9da78f7bff?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">9</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/aec8a9257edacaa425fe8d940c31014a8768ddc9" alt=""><h4>Enchanted</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/bda8735c0a6b10a0a61ddc7ff3f440c2db6d4857?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">10</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/5700fa4df69fff11dfc6a84a97bc1b23bbee81f3" alt=""><h4>Keep It Simple</h4><h4 class="no_padding">Tove Lo</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/0e4fe0f503a706b341ac0fe596831ddac1101b6c?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">11</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/7282038812a4baf6644a542e18159ee4a9a0296a" alt=""><h4>Last Friday Night (T.G.I.F.)</h4><h4 class="no_padding">Katy Perry</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/102255c25347769652df929b2cedb748a7e49b4a?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">12</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dc9bd2dd3bfe455d3b0f12f2f08351a7d42b6531" alt=""><h4>Blank Space</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/54ad4d8bf804ad67418e5551c3d1da3b1b1ae0a1?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">13</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dc9bd2dd3bfe455d3b0f12f2f08351a7d42b6531" alt=""><h4>Wildest Dreams</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/2b30811ed02ef6ebd6f84998120de8a7409241f9?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">14</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/2fd037ed12cf6d069c47d1e96befebbe654af27b" alt=""><h4>Born To Die</h4><h4 class="no_padding">Lana Del Rey</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/c1e064eaeafdf737cd7dd2557fd66aeda0e741cc?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">15</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273cc5da1d919f3ee4b8318b38d" alt=""><h4>Ugly Heart</h4><h4 class="no_padding">G.R.L.</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/92d5bc75f6f30cda85e4f20f439177a86f9862d9?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">16</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273ad7e11015eb1959e6bbb0776" alt=""><h4>Borderline - Vanic Remix</h4><h4 class="no_padding">Tove Styrke, Vanic, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/9f9297c416d0aef6f37edf282243e333857f9601?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">17</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2733899712512f50a8d9e01e951" alt=""><h4>Carousel</h4><h4 class="no_padding">Melanie Martinez</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/6ae76923f9dca2e7431ac2b4ae568e86bd36f49f?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">18</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/1c654bfd0019fa4674368f7a7c52134e50e25d1d" alt=""><h4>Come Back To Me</h4><h4 class="no_padding">Urban Cone, Tove Lo, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/b0dec5578d926683ed07cce2489bf5743d099fa2?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">19</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273bce8baa37fb3db5c938be7f1" alt=""><h4>Stop Thinking About You</h4><h4 class="no_padding">Betty Who</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/91dfe6fec5d36ad91d1dc6f756795be8fc2fac7d?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">20</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/c21ef703a611fd731c45f344286614c879bde7a4" alt=""><h4>HEAVEN</h4><h4 class="no_padding">Troye Sivan, Betty Who, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/a59707cb1d0b98489f665a6c583c07a0dbca83a8?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">21</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/958abd4cd8f9fac16741f829069140d5f511fa34" alt=""><h4>Part of Your World (Reprise) - From "The Little Mermaid" / Soundtrack Version</h4><h4 class="no_padding">Jodi Benson</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/528393a4e203e6e20fdc3278c0e2964d69682221?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">22</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2739cca756edcf7dec94337ad45" alt=""><h4>Wanna Be</h4><h4 class="no_padding">Betty Who</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/8a0e9f802a888e48b0e91cbe02b1917d26884c6c?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">23</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/e30b81b756002dffe808888a4b67461e15e67681" alt=""><h4>I Think He Knows</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/182bae065d603c2cb7d68b78ace80ad5a153a6d4?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">24</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2738e1f647495675e4240ac6beb" alt=""><h4>Waiting All Night</h4><h4 class="no_padding">Rudimental, Ella Eyre, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/422d4f2a789b911be7c8ad6401725735121d729d?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">25</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2738f30c5f8469683609665eb68" alt=""><h4>Castle on the Hill</h4><h4 class="no_padding">Ed Sheeran</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/beb4ed48cca5d2a792e877c7efe92d54046eac67?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">26</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/7282038812a4baf6644a542e18159ee4a9a0296a" alt=""><h4>California Gurls</h4><h4 class="no_padding">Katy Perry, Snoop Dogg, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/6d6284e8708cd21d7ff8442eba1dcdfb2181c468?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">27</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/54e03633f156b0dca21101ed0ef31f93f69d5f89" alt=""><h4>How Far I'll Go</h4><h4 class="no_padding">Auli'i Cravalho</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/3b5acacea0ef1b9b61dd88d723102a110b68241d?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">28</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273ad16af381a2b4eb674344b69" alt=""><h4>Good Times</h4><h4 class="no_padding">Ella Eyre</h4> <figure> <audio controls="controls" preload="auto" ><source src="None" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">29</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2730d1d6e9325275f104f8e33f3" alt=""><h4>Haunted</h4><h4 class="no_padding">Beyoncé</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/63fcd43b454b1dc9c98a3e29b02f66755639a16f?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">30</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273c040c52306956f14f0860da6" alt=""><h4>Break a Sweat</h4><h4 class="no_padding">Becky G</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/15e7abae3f675f83445261885e4c04407a39f956?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">31</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/9924ffd7e36305f5c259991c1e5e8cee4ba8b0bf" alt=""><h4>Never Really Over</h4><h4 class="no_padding">Katy Perry</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/ed817eae709eae2827a0a455b84d7ae7535ac6c7?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">32</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/e30b81b756002dffe808888a4b67461e15e67681" alt=""><h4>Cruel Summer</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/392adc5f542a5733e20fe554ce1b1fa67710db32?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">33</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/6441b3a54e720b0fab3646c89ef35869d559414d" alt=""><h4>You Need To Calm Down</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="None" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">34</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/58ebf505218488c0036ff59a4c74df69e5258536" alt=""><h4>I'll Be Yours</h4><h4 class="no_padding">Those Dancing Days</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/4d5c9653ced1a64e288b9ada509b0288244d40fc?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">35</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2735bdd9e580fdda5e676a25e6a" alt=""><h4>BO$$</h4><h4 class="no_padding">Fifth Harmony</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/91e0550a0b3a741db6fd57233469bc57fb713a60?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">36</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273f7f5503cfc6a54d31e65b112" alt=""><h4>Shower</h4><h4 class="no_padding">Becky G</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/f8c945615b8bffea415fc5c1b8487abedfe033cb?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">37</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/5f19c3e9d067bc203851fe81dcb6520f20637d4d" alt=""><h4>Masquerade</h4><h4 class="no_padding">Nicki Minaj</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/46db4c8cfbc85b63616fbf396cc81d46641e3350?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">38</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/aec8a9257edacaa425fe8d940c31014a8768ddc9" alt=""><h4>Back To December</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/f5d6c068981328b6e73dbfd7660a005c0ed28373?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">39</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/c1d13ca191838eb78d0f609d4805a400650cc4f8" alt=""><h4>Call It What You Want</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/d0b667f8682982cc42ce0bc396f51e5f5686026a?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">40</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b2739cca756edcf7dec94337ad45" alt=""><h4>Pretend You're Missing Me</h4><h4 class="no_padding">Betty Who</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/b2aede924cbe60e5dc19f6a988533c3bd9a648dc?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">41</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273ca10fae7d292c52f7e8b11ca" alt=""><h4>Piece of Me</h4><h4 class="no_padding">Britney Spears</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/2ece5b2602fdaa7a69643e8729d96ae9c73b19a8?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">42</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b27337f6fcbee30fd4020bce5633" alt=""><h4>Basic</h4><h4 class="no_padding">Sigrid</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/e2cdb6a25e041793d57659b28c2988f7b465286e?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">43</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b27318d072a2cac36a71ffef0932" alt=""><h4>6/10</h4><h4 class="no_padding">dodie</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/2290a36b3b410cb378848789b03adcaf8cf0b9a2?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">44</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/05c1b9ea187ba523240feccabc5a3865bbf718d1" alt=""><h4>Seven Devils</h4><h4 class="no_padding">Florence + The Machine</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/178688b9bec908db0a14087d1c9f4cd60ba3bb81?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">45</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273d92afcf66072c83e4b28c6bb" alt=""><h4>Let's Get Married</h4><h4 class="no_padding">Bleachers</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/f0edf28b4f2c988ead6cb1c3a7a8af089114cf7d?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">46</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/ab67616d0000b273495ce6da9aeb159e94eaa453" alt=""><h4>Closer (feat. Halsey)</h4><h4 class="no_padding">The Chainsmokers, Halsey, </h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/8d3df1c64907cb183bff5a127b1525b530992afb?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">47</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/6d4900c3d4cf42acf87c1dfe4626c40c0023bd42" alt=""><h4>Red</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/d6ee81d1d732fbea2e8ab0f6fc24a9bea5343092?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">48</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/c21ef703a611fd731c45f344286614c879bde7a4" alt=""><h4>YOUTH</h4><h4 class="no_padding">Troye Sivan</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/7d69330a95eeb2fa05e1279ddbbb5399305c2356?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">49</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/dc9bd2dd3bfe455d3b0f12f2f08351a7d42b6531" alt=""><h4>This Love</h4><h4 class="no_padding">Taylor Swift</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/93491d385c7624ca1e42b230fb44724d8e804326?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr><tr><td class="numbering"> <div><h3 class="even_special">50</h3></td><td class ="track_results"><img src="https://i.scdn.co/image/4a860a863d0677990169af0813e0d62f2e443369" alt=""><h4>Part of Your World (Reprise)</h4><h4 class="no_padding">Sierra Boggess as Ariel</h4> <figure> <audio controls="controls" preload="auto" ><source src="https://p.scdn.co/mp3-preview/90b4b6367f4594108a507a23ff1242e5d3b83a20?cid=1a773c4bc19340c5857f9b8d83166414" type="audio/mpeg"/> Your browser does not support the audio! </audio> </figure></td></tr></table>
+
+    </body>
+
+    <footer>
+
+            <p>AJ Carter &copy; 2020</p>
+            </footer>
+
+
+    </html>
+    

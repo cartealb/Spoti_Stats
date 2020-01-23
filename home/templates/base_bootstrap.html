@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Edit samples/settings.py and add APP_NAME = 'DJ4E Samples' or similar -->
+
+
+
+
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+
+
+
+<meta name="wa4e-version" value="2019-10:161EB">
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        {% load static %}
+  <a style ="width:30%" class="navbar-brand" href=""><img src="{% static 'images/spoti_stats_logo_hor.png' %}" id="logo" alt="Spoti Stats Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top Artists
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <table>
+            <tr>
+            <td class="numbering">
+                <div id="home_link_tabs">
+          <a class="dropdown-item" href="spotify/long_term_artists">Long Term Artists</a>
+          <a class="dropdown-item" href="spotify/medium_term_artists">Medium Term Artists</a>
+          <!--<div class="dropdown-divider"></div> -->
+          <a class="dropdown-item" href="spotify/short_term_artists">Short Term Artists</a>
+
+        </div>
+        </td>
+        </tr>
+        </table>
+
+      </li>
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Top Tracks
+        </a>
+
+        <table>
+            <tr>
+            <td class="numbering">
+                <div id="home_link_tabs">
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <a class="dropdown-item" href="spotify/long_term_tracks">Long Term Tracks</a>
+
+
+
+          <a class="dropdown-item" href="spotify/medium_term_tracks">Medium Term Tracks</a>
+
+
+
+          <a class="dropdown-item" href="spotify/short_term_tracks">Short Term Tracks</a>
+
+
+
+          </div>
+          </td>
+        </tr>
+        </table>
+
+
+      </li>
+
+
+        <li class="nav-item active" >
+                <a class="nav-link" href="{% url 'logout' %}?next={% url 'spotify:all' %}">Logout <span class="sr-only">(current)</span></a>
+        </li>
+
+
+
+    </ul>
+
+
+  </div>
+
+
+
+
+
+</nav>
+
+
+
+
+
+
+</head>
+<body>
+{% block navbar %} {% endblock %}
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
